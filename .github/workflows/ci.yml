@@ -1,0 +1,37 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Auditar estilo de código con Flake8
+      run: |
+        flake8
+
+    - name: Ejecutar pruebas unitarias de Django
+      env:
+        SECRET_KEY: 'test-secret-key-for-ci-pipeline'
+        DEBUG: 'True'
+      run: |
+        python manage.py test
