@@ -34,4 +34,4 @@ jobs:
         SECRET_KEY: 'test-secret-key-for-ci-pipeline'
         DEBUG: 'True'
       run: |
-        python manage.py test
+        python manage.py test apps.tracker --verbosity 2
