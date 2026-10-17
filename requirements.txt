@@ -9,8 +9,7 @@ psycopg2-binary>=2.9.9
 dj-database-url>=2.1.0
 
 # SDK Oficial de IA
-google-generativeai>=0.8.0
-
+google-genai>=0.1.1
 # Servidor de Producción (Render)
 gunicorn>=22.0.0
 whitenoise>=6.6.0
