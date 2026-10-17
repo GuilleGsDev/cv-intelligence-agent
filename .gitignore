@@ -1,0 +1,34 @@
+# Entornos Virtuales
+venv/
+.venv/
+env/
+ENV/
+
+# Python / Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Variables de entorno y secretos (NUNCA commitear)
+.env
+.env.local
+
+# Archivos de base de datos local (pruebas locales antes de Supabase)
+*.sqlite3
+db.sqlite3
+
+# Archivos estáticos recolectados y media
+staticfiles/
+media/
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs y reportes de cobertura/tests
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
